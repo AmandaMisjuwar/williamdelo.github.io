@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B1226" />
+    <meta name="color-scheme" content="dark" />
+    <title>Resume | William Delo</title>
+    <meta
+      name="description"
+      content="Resume: software engineer on Security Copilot at Microsoft. Cell-based architecture, RBAC for AI agents, multi-tenant services."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b1226;
+        --surface: #121b36;
+        --line: #1d2849;
+        --text: #e4eaf4;
+        --text-soft: #b5bfd6;
+        --muted: #8a96b3;
+        --faint: #5d6a8c;
+        --teal: #4aa89a;
+        --teal-hover: #6bc2b4;
+        --green: #a7d676;
+        --green-muted: #96b888;
+        --green-hover: #b3d2a5;
+        --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+        --sans:
+          "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: clamp(20px, 4vw, 36px) clamp(24px, 6vw, 72px)
+          clamp(56px, 10vw, 96px);
+      }
+
+      a {
+        color: var(--green-muted);
+        text-decoration: underline;
+        text-decoration-color: var(--line);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px;
+        transition:
+          color 150ms ease,
+          text-decoration-color 150ms ease;
+      }
+      a:hover {
+        color: var(--green-hover);
+        text-decoration-color: var(--green-hover);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--green-muted);
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+
+      .back {
+        display: inline-block;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--text);
+      }
+      .back:hover {
+        color: var(--green-hover);
+      }
+
+      ::selection {
+        background: var(--green);
+        color: var(--bg);
+      }
+
+      header {
+        margin-top: clamp(28px, 6vw, 48px);
+      }
+
+      h1 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(32px, 5vw, 42px);
+        line-height: 1.12;
+        letter-spacing: -0.012em;
+        margin: 0 0 14px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0 0 12px;
+      }
+      .tag {
+        font-family: var(--mono);
+        font-size: 12px;
+        line-height: 1.4;
+        color: var(--text-soft);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 4px 10px;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 28px;
+        font-size: 15px;
+      }
+      .contact a {
+        display: inline-block;
+        padding: 8px 0;
+      }
+      .contact span {
+        display: inline-block;
+        padding: 8px 0;
+        color: var(--muted);
+      }
+
+      .summary {
+        margin: clamp(24px, 4vw, 32px) 0 0;
+        max-width: 36em;
+        font-size: clamp(16px, 2.2vw, 18px);
+        line-height: 1.75;
+        color: var(--text-soft);
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: 160px minmax(0, 1fr);
+        gap: 8px 32px;
+        border-top: 1px solid var(--line);
+        margin-top: clamp(40px, 7vw, 64px);
+        padding-top: 22px;
+      }
+
+      h2 {
+        font-family: var(--mono);
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--teal);
+        margin: 3px 0 0;
+        line-height: 1.7;
+      }
+
+      h3 {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0;
+        line-height: 1.4;
+      }
+      .co p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .role {
+        margin-top: 32px;
+      }
+      .co + .role {
+        margin-top: 28px;
+      }
+
+      .role-head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 2px 16px;
+        margin-bottom: 10px;
+      }
+      h4 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .time {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--faint);
+        white-space: nowrap;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--text-soft);
+      }
+      li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.85em;
+        width: 8px;
+        height: 1px;
+        background: var(--faint);
+      }
+
+      dl {
+        margin: 0;
+      }
+      dt {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--faint);
+        margin-top: 16px;
+      }
+      dt:first-child {
+        margin-top: 0;
+      }
+      dd {
+        margin: 2px 0 0;
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--text-soft);
+      }
+
+      @media (max-width: 720px) {
+        section {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        h2 {
+          margin-top: 0;
+        }
+        .role-head {
+          flex-direction: column;
+        }
+      }
+
+      @media print {
+        :root {
+          color-scheme: light;
+        }
+        body {
+          background: #fff;
+          color: #111;
+          font-size: 11pt;
+        }
+        .back {
+          display: none;
+        }
+        a {
+          color: #111;
+          text-decoration: none;
+        }
+        h2,
+        .time,
+        dt,
+        .co p {
+          color: #555;
+        }
+        .tag {
+          color: #333;
+          border-color: #bbb;
+        }
+        li,
+        dd {
+          color: #222;
+        }
+        li::before {
+          background: #888;
+        }
+        section {
+          border-top-color: #ccc;
+          break-inside: avoid;
+          margin-top: 20pt;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <a class="back" href="index.html">&larr; William Delo</a>
+
+      <header>
+        <h1>William Delo</h1>
+        <div class="tags">
+          <span class="tag">Software Engineer</span>
+          <span class="tag">Multi-tenant backend systems</span>
+          <span class="tag">AI agent authorization</span>
+        </div>
+        <div class="contact">
+          <span>Seattle, WA</span>
+          <a href="mailto:wdelo32@gmail.com">wdelo32@gmail.com</a>
+          <a
+            href="https://www.linkedin.com/in/your-handle"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </div>
+        <p class="summary">
+          Software engineer at Microsoft since 2023, building multi-tenant
+          backend systems and authorization for Security Copilot, a generative
+          AI security platform. Built and owned the routing service that maps
+          thousands of customer workspaces to 30+ isolated deployment cells
+          across 8 geographies, enabling the move to a cell-based architecture.
+          Designed the RBAC model that lets teams across 3 other Microsoft
+          Security products assign roles to the AI agents they build. Created
+          the workspace microservice that became a shared dependency across 20
+          services, and contributed to a team effort that cut median platform
+          overhead 48%.
+        </p>
+      </header>
+
+      <main>
+        <section aria-labelledby="experience">
+          <h2 id="experience">Experience</h2>
+          <div>
+            <div class="co">
+              <h3>Microsoft</h3>
+              <p>Security Copilot, a generative AI security platform</p>
+            </div>
+
+            <article class="role">
+              <div class="role-head">
+                <h4>Software Engineer II</h4>
+                <span class="time">2025 &ndash; Present</span>
+              </div>
+              <ul>
+                <li>
+                  Built and owned the routing service mapping thousands of
+                  customer workspaces to 30+ isolated deployment cells across 8
+                  geographies, enabling a production move to a cell-based
+                  architecture
+                </li>
+                <li>
+                  Designed a new SQL-backed RBAC model for AI agents on the
+                  platform, combining built-in roles with permissions mapped
+                  from 3 other Microsoft Security products so their teams can
+                  assign roles to the agents they build
+                </li>
+                <li>
+                  Implemented workspace provisioning for Microsoft 365 E5
+                  enterprise onboarding on the new cell-based backend,
+                  deterministically allocating each workspace to a cell within
+                  its geography
+                </li>
+                <li>
+                  Moved workspace reads from an upstream dependency to an owned
+                  Azure Cosmos DB store, with fallback and self-healing for
+                  workspaces not yet migrated, keeping the service API unchanged
+                  for consuming services
+                </li>
+                <li>
+                  Created multi-region synthetic monitors, dependency
+                  dashboards, alerts, and on-call runbooks for workspace and
+                  routing services, enabling earlier outage detection and faster
+                  diagnosis of upstream failures
+                </li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-head">
+                <h4>Software Engineer</h4>
+                <span class="time">2023 &ndash; 2025</span>
+              </div>
+              <ul>
+                <li>
+                  Designed and deployed a multi-tenant workspace microservice
+                  (C#, ASP.NET Core, Azure Cosmos DB) that became a shared
+                  dependency for routing and AI agent features across 20
+                  services, replacing duplicated workspace lookups
+                </li>
+                <li>
+                  Instrumented LLM prompt execution with overlap-aware latency
+                  tracing and partnered on removing a redundant hot-path call,
+                  supporting a team effort that cut median platform overhead 48%
+                  (3.2s to 1.7s) and user-perceived latency 14%
+                </li>
+                <li>
+                  Fixed a settings API vulnerability by deriving tenant identity
+                  from authenticated claims instead of client-supplied request
+                  fields
+                </li>
+                <li>
+                  Mentored an intern through scoping, design reviews, and final
+                  presentation to an accepted return offer
+                </li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-head">
+                <h4>Software Engineering Intern, Intune</h4>
+                <span class="time">2022</span>
+              </div>
+              <ul>
+                <li>
+                  Containerized a legacy Intune device-management service and
+                  deployed it to Azure Kubernetes Service (AKS), validating it
+                  with live internal traffic as a proof of concept for migrating
+                  existing services to Kubernetes
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="skills">
+          <h2 id="skills">Skills</h2>
+          <dl>
+            <dt>Languages</dt>
+            <dd>C#, SQL, Kusto Query Language (KQL)</dd>
+            <dt>Authorization</dt>
+            <dd>
+              RBAC, role and permission modeling, scoped role assignments,
+              multi-tenant isolation, AI agent authorization
+            </dd>
+            <dt>Platform and infrastructure</dt>
+            <dd>
+              ASP.NET Core, Azure SQL, Azure Cosmos DB, Kubernetes, Azure
+              Kubernetes Service (AKS), cell-based architecture, synthetic
+              monitoring
+            </dd>
+          </dl>
+        </section>
+
+        <section aria-labelledby="education">
+          <h2 id="education">Education</h2>
+          <div class="role-head" style="margin-bottom: 0">
+            <h4>BS, Computer Science and Engineering, Ohio State University</h4>
+            <span class="time">2023, Summa Cum Laude</span>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
